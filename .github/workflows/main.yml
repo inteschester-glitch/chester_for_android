@@ -5,4 +5,4 @@ jobs:
    runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v4
-  - uses: ArtemisG5/Buildozer-Action-Template/.github/workflows/buildozer.yml@main
+  - uses: ArtemisG5/Buildozer-Action-Template/.github/workflow/buildozer.yml@main
