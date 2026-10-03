@@ -1,0 +1,15 @@
+name: APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  android:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ArtemSBulgakov/buildozer-action@v3
+        with:
+          command: buildozer android debug
