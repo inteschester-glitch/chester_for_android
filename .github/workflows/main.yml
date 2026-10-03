@@ -1,8 +1,0 @@
-name: Compilar APK
-on: [push, workflow_dispatch]
-jobs:
- build:
-   runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v4
-  - run: pip install buildozer cython && yes | buildozer && yes | buildozer -v android debug
