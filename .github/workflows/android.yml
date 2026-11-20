@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ArtemSBulgakov/buildozer-action@v3
-        with:
+
+      - name: Build with Buildozer
+      id: buildozer
+      - uses: ArtemSBulgakov/buildozer-action@v1
+      with:
           command: buildozer android debug
+
+          - name: Upload artifacts
+          uses: actions/upload-artifact@v4
+          with:
+            name: package
+            path: ${{ steps.buildozer.outputs.filename }}
